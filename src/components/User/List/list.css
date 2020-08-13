@@ -1,0 +1,28 @@
+.container {
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  border-bottom: 1px solid black;
+  margin: 0 10px;
+}
+
+.column {
+  flex: 1 0 400px;
+  padding-left: 10px;
+}
+
+.btn {
+  background-color: #00acc1;
+  border-radius: 40px;
+  border: none;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 0;
+  cursor: pointer;
+}
