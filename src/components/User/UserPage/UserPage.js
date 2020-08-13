@@ -1,11 +1,17 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import GET_USERS from "../../User/List/index.js";
-import { Link } from "react-router-dom";
-import "./list.css";
+import GET_USER from "../../User/UserPage/index.js";
+import "../List/list.css";
 
-function Users() {
-  const { loading, error, data } = useQuery(GET_USERS);
+const UserPage = ({ match }) => {
+  const {
+    params: { userId },
+  } = match;
+  const { loading, error, data } = useQuery(GET_USER, {
+    variables: { id: userId },
+  });
+
+  console.log(data);
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
@@ -16,29 +22,27 @@ function Users() {
           <h3>Name</h3>
         </div>
         <div className="column">
-          <h3>Email</h3>
+          <h3>Description</h3>
         </div>
         <div className="column">
-          <h3>Actions</h3>
+          <h3>Status</h3>
         </div>
       </div>
-      {data.users.map((user) => (
-        <div className="row" key={user.id}>
+      {data.user.tasks.map((task) => (
+        <div className="row" key={task.id}>
           <div className="column">
-            <h3>{user.name}</h3>
+            <h3>{task.name}</h3>
           </div>
           <div className="column">
-            <h3>{user.email}</h3>
+            <h3>{task.description}</h3>
           </div>
           <div className="column">
-            <Link to={`user/${user.id}`} className="btn">
-              Show Tasks
-            </Link>
+            <h3>{task.status}</h3>
           </div>
         </div>
       ))}
     </div>
   );
-}
+};
 
-export default Users;
+export default UserPage;
