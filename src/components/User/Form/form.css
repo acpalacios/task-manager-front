@@ -1,0 +1,22 @@
+.btn-container {
+  text-align: right;
+}
+
+.form-container {
+  padding: 16px;
+  background-color: white;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px 2px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-input {
+  background-color: #ddd;
+  outline: none;
+}

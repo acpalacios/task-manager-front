@@ -4,7 +4,7 @@ import GET_TASKS from "./index.js";
 import { Link } from "react-router-dom";
 import "./list.css"
 
-function Users() {
+const Tasks = () => {
   const { loading, error, data } = useQuery(GET_TASKS);
 
   if (loading) return "Loading...";
@@ -53,4 +53,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default Tasks;
