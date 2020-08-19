@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar/Navbar";
 import UserPage from "./components/User/UserPage/UserPage";
 import UserForm from "./components/User/Form/UserForm";
 import TaskForm from "./components/Task/Form/TaskForm";
+import UpdateForm from "./components/Task/Update/UpdateForm";
 
 const client = new ApolloClient({
   uri: "http://127.0.0.1:8000/graphql",
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/user/:userId" component={UserPage}></Route>
           <Route exact path="/tasks" component={Tasks}></Route>
           <Route exact path="/task/create" component={TaskForm}></Route>
+          <Route exact path="/task/:taskId" component={UpdateForm}></Route>
           <Route exact path="/" component={Home}></Route>
         </Switch>
       </ApolloProvider>
